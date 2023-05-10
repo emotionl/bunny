@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "bunny is a music tool to help you easily get the basic details in music.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "build": "rollup -c",
+    "format": "prettier --write \"**/*.{js,ts}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,7 +17,9 @@
     "@rollup/plugin-node-resolve": "^15.0.2",
     "@rollup/plugin-terser": "^0.4.1",
     "@types/node": "^20.1.2",
+    "prettier": "^2.8.8",
     "rollup": "^3.21.6",
+    "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.4"
