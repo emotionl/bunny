@@ -1,6 +1,6 @@
 {
   "name": "@emotionl/bunny",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bunny is a music tool to help you easily get the basic details in music.",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
