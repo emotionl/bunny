@@ -1,17 +1,19 @@
 {
-  "name": "bunny",
+  "name": "@emotionl/bunny",
   "version": "1.0.0",
   "description": "bunny is a music tool to help you easily get the basic details in music.",
-  "main": "index.js",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.esm.js",
+  "browser": "./dist/index.umd.js",
+  "typings": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
     "build": "rollup -c",
-    "format": "prettier --write \"**/*.{js,ts}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier --write \"**/*.{js,ts}\""
   },
   "keywords": [],
-  "author": "emotionl <emotionl@yeah.net> (https://github.com/emotionl/)",
-  "license": "ISC",
+  "author": "emotionl (https://github.com/emotionl/)",
+  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.1.0",
     "@rollup/plugin-node-resolve": "^15.0.2",
