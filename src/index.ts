@@ -53,6 +53,7 @@ export type Mode =
   | 'Bebop Major'
   | 'Bebop Minor'
   | 'Bebop Dominent'
+  | 'Bebop Dorian'
 
 export type ModeList = Array<Mode>
 export type ModeIntervalMap = Record<Mode, Array<Interval>>
@@ -103,7 +104,8 @@ const MODE_INTERVAL_MAP: ModeIntervalMap = {
   'Melodic Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'M7'],
   'Bebop Major': ['P1', 'M2', 'M3', 'P4', 'P5', 'm6', 'M6', 'M7'],
   'Bebop Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M6', 'M7'],
-  'Bebop Dominent': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7', 'M7']
+  'Bebop Dominent': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7', 'M7'],
+  'Bebop Dorian': ['P1', 'M2', 'm3', 'M3', 'P4', 'P5', 'M6', 'm7']
 }
 const OCTAVE_INTERVAL: Interval = 'P8'
 const OCTAVE_SEMITONE = 12
