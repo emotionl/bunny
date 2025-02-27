@@ -1,66 +1,131 @@
-# **Bunny🐰**
+# Bunny 🐰
 
-Bunny is a JavaScript library for music theory calculations, providing some common methods and constants for music theory calculations.
+A lightweight JavaScript library for music theory calculations. Bunny provides intuitive methods and constants for scales, intervals, modes, and other music theory concepts.
 
-## **Installation**
-
-Install via npm:
+## Installation
 
 ```bash
+# Using npm
 npm install @emotionl/bunny --save
+
+# Using yarn
+yarn add @emotionl/bunny
+
+# Using pnpm
+pnpm add @emotionl/bunny
 ```
 
-## **API**
+## Features
 
-### **`getScale(key: Note, mode: Mode, isSharp: boolean = true, withOctave: boolean = false): SingleNoteList`**
+- Generate scales across different modes
+- Work with the circle of fifths
+- Create note lists based on intervals
+- Access semitone patterns for modes
+- Calculate intervals for different modes
 
-Gets the scale of a specified mode.
+## API Reference
 
-- `key`: The tonic of the scale.
-- `mode`: The name of the mode.
-- `isSharp`: Whether to use sharps or flats in the scale (default is `true`).
-- `withOctave`: Whether to include an octave of notes (default is `false`).
-- Returns: An array containing a list of notes.
+### Scales
 
-### **`getCircleOfFifthList(isSharp: boolean = true): CircleOfFifthList`**
+#### `getScale(key: Note, mode: Mode, isSharp: boolean = true, withOctave: boolean = false): SingleNoteList`
 
-Gets the circle of fifths for all modes.
+Returns the scale notes for a specified mode.
 
-- `isSharp`: Whether to use sharps or flats in the modes (default is `true`).
-- Returns: An array of objects containing the name of the mode and the notes for the major and relative minor keys.
+**Parameters:**
+- `key`: The tonic of the scale
+- `mode`: The name of the mode
+- `isSharp`: Use sharps or flats notation (default: `true`)
+- `withOctave`: Include an octave of notes (default: `false`)
 
-### **`getNoteListByStep(startNote: Note, interval: Interval, amount: number, isSharp: boolean = true): SingleNoteList`**
+**Returns:** Array of notes in the scale
 
-Gets a list of notes starting from a specified note and following a specified interval pattern.
+**Example:**
+```js
+import { getScale } from '@emotionl/bunny';
 
-- `startNote`: The starting note.
-- `interval`: The interval pattern.
-- `amount`: The number of notes to include in the list.
-- `isSharp`: Whether to use sharps or flats in the notes (default is `true`).
-- Returns: An array containing a list of notes.
+// Get C Major scale
+const cMajor = getScale('C', 'ionian');  // ['C', 'D', 'E', 'F', 'G', 'A', 'B']
 
-### **`getModeSemitone(mode: Mode, withOctave: boolean = false): number[]`**
+// Get D Dorian scale with octave
+const dDorian = getScale('D', 'dorian', true, true);  // ['D', 'E', 'F', 'G', 'A', 'B', 'C', 'D']
 
-Gets the list of semitones for a specified mode.
+// Get Bb Mixolydian scale (using flats)
+const bFlatMixolydian = getScale('Bb', 'mixolydian', false);  // ['Bb', 'C', 'D', 'Eb', 'F', 'G', 'Ab']
+```
 
-- `mode`: The name of the mode.
-- `withOctave`: Whether to include an octave of notes (default is `false`).
-- Returns: An array containing a list of semitones.
+### Circle of Fifths
 
-### **`getModeList(): ModeList`**
+#### `getCircleOfFifthList(isSharp: boolean = true): CircleOfFifthList`
 
-Gets the list of mode names.
+Returns the circle of fifths for all modes.
 
-- Returns: An array containing a list of mode names.
+**Parameters:**
+- `isSharp`: Use sharps or flats notation (default: `true`)
 
-### **`getModeInterval(mode: Mode, withOctave: boolean = false): Interval[]`**
+**Returns:** Array of objects containing the mode name and notes for major and relative minor keys
 
-Gets the list of intervals for a specified mode.
+**Example:**
+```js
+import { getCircleOfFifthList } from '@emotionl/bunny';
 
-- `mode`: The name of the mode.
-- `withOctave`: Whether to include an octave of notes (default is `false`).
-- Returns: An array containing a list of intervals.
+const circleOfFifths = getCircleOfFifthList();
+console.log(circleOfFifths[0]); // First entry in the circle of fifths
+```
 
-## **License**
+### Note Sequences
 
-MIT.
+#### `getNoteListByStep(startNote: Note, interval: Interval, amount: number, isSharp: boolean = true): SingleNoteList`
+
+Generates a sequence of notes following a specified interval pattern.
+
+**Parameters:**
+- `startNote`: The starting note
+- `interval`: The interval pattern to follow
+- `amount`: Number of notes to include
+- `isSharp`: Use sharps or flats notation (default: `true`)
+
+**Returns:** Array of notes following the interval pattern
+
+**Example:**
+```js
+import { getNoteListByStep } from '@emotionl/bunny';
+
+// Generate a sequence of perfect fifths starting from C
+const fifths = getNoteListByStep('C', 'P5', 7);  // ['C', 'G', 'D', 'A', 'E', 'B', 'F#']
+```
+
+### Mode Functions
+
+#### `getModeSemitone(mode: Mode, withOctave: boolean = false): number[]`
+
+Returns the semitone pattern for a specified mode.
+
+**Parameters:**
+- `mode`: The name of the mode
+- `withOctave`: Include an octave (default: `false`)
+
+**Returns:** Array of semitone values
+
+#### `getModeList(): ModeList`
+
+Returns all available mode names.
+
+**Returns:** Array of mode names
+
+#### `getModeInterval(mode: Mode, withOctave: boolean = false): Interval[]`
+
+Returns the interval pattern for a specified mode.
+
+**Parameters:**
+- `mode`: The name of the mode
+- `withOctave`: Include an octave (default: `false`)
+
+**Returns:** Array of intervals
+
+## Types
+
+The library includes TypeScript type definitions for all functions and return values.
+
+## License
+
+MIT
