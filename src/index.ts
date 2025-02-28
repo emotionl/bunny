@@ -47,6 +47,7 @@ export type Mode =
   | 'Locrian'
   | 'Major Pentatonic'
   | 'Minor Pentatonic'
+  | 'Mixolydian Pentatonic'
   | 'Blues Scale'
   | 'Harmonic Minor'
   | 'Melodic Minor'
@@ -99,6 +100,7 @@ const MODE_INTERVAL_MAP: ModeIntervalMap = {
   Locrian: ['P1', 'm2', 'm3', 'P4', 'd5', 'm6', 'm7'],
   'Major Pentatonic': ['P1', 'M2', 'M3', 'P5', 'M6'],
   'Minor Pentatonic': ['P1', 'm3', 'P4', 'P5', 'm7'],
+  'Mixolydian Pentatonic': ['P1', 'M3', 'P4', 'P5', 'm7'],
   'Blues Scale': ['P1', 'm3', 'P4', 'd5', 'P5', 'm7'],
   'Harmonic Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M7'],
   'Melodic Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'M7'],
