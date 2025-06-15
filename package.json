@@ -21,7 +21,6 @@
     "@types/node": "^20.1.2",
     "eslint": "^9.28.0",
     "eslint-plugin-format": "^1.0.1",
-    "prettier": "^2.8.8",
     "tsdown": "^0.12.7",
     "typescript": "^5.0.4"
   }
