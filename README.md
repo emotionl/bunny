@@ -32,6 +32,7 @@ pnpm add @emotionl/bunny
 Returns the scale notes for a specified mode.
 
 **Parameters:**
+
 - `key`: The tonic of the scale
 - `mode`: The name of the mode
 - `isSharp`: Use sharps or flats notation (default: `true`)
@@ -40,17 +41,18 @@ Returns the scale notes for a specified mode.
 **Returns:** Array of notes in the scale
 
 **Example:**
+
 ```js
-import { getScale } from '@emotionl/bunny';
+import { getScale } from '@emotionl/bunny'
 
 // Get C Major scale
-const cMajor = getScale('C', 'ionian');  // ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+const cMajor = getScale('C', 'ionian') // ['C', 'D', 'E', 'F', 'G', 'A', 'B']
 
 // Get D Dorian scale with octave
-const dDorian = getScale('D', 'dorian', true, true);  // ['D', 'E', 'F', 'G', 'A', 'B', 'C', 'D']
+const dDorian = getScale('D', 'dorian', true, true) // ['D', 'E', 'F', 'G', 'A', 'B', 'C', 'D']
 
 // Get Bb Mixolydian scale (using flats)
-const bFlatMixolydian = getScale('Bb', 'mixolydian', false);  // ['Bb', 'C', 'D', 'Eb', 'F', 'G', 'Ab']
+const bFlatMixolydian = getScale('Bb', 'mixolydian', false) // ['Bb', 'C', 'D', 'Eb', 'F', 'G', 'Ab']
 ```
 
 ### Circle of Fifths
@@ -60,16 +62,18 @@ const bFlatMixolydian = getScale('Bb', 'mixolydian', false);  // ['Bb', 'C', 'D'
 Returns the circle of fifths for all modes.
 
 **Parameters:**
+
 - `isSharp`: Use sharps or flats notation (default: `true`)
 
 **Returns:** Array of objects containing the mode name and notes for major and relative minor keys
 
 **Example:**
-```js
-import { getCircleOfFifthList } from '@emotionl/bunny';
 
-const circleOfFifths = getCircleOfFifthList();
-console.log(circleOfFifths[0]); // First entry in the circle of fifths
+```js
+import { getCircleOfFifthList } from '@emotionl/bunny'
+
+const circleOfFifths = getCircleOfFifthList()
+console.log(circleOfFifths[0]) // First entry in the circle of fifths
 ```
 
 ### Note Sequences
@@ -79,6 +83,7 @@ console.log(circleOfFifths[0]); // First entry in the circle of fifths
 Generates a sequence of notes following a specified interval pattern.
 
 **Parameters:**
+
 - `startNote`: The starting note
 - `interval`: The interval pattern to follow
 - `amount`: Number of notes to include
@@ -87,11 +92,12 @@ Generates a sequence of notes following a specified interval pattern.
 **Returns:** Array of notes following the interval pattern
 
 **Example:**
+
 ```js
-import { getNoteListByStep } from '@emotionl/bunny';
+import { getNoteListByStep } from '@emotionl/bunny'
 
 // Generate a sequence of perfect fifths starting from C
-const fifths = getNoteListByStep('C', 'P5', 7);  // ['C', 'G', 'D', 'A', 'E', 'B', 'F#']
+const fifths = getNoteListByStep('C', 'P5', 7) // ['C', 'G', 'D', 'A', 'E', 'B', 'F#']
 ```
 
 ### Mode Functions
@@ -101,6 +107,7 @@ const fifths = getNoteListByStep('C', 'P5', 7);  // ['C', 'G', 'D', 'A', 'E', 'B
 Returns the semitone pattern for a specified mode.
 
 **Parameters:**
+
 - `mode`: The name of the mode
 - `withOctave`: Include an octave (default: `false`)
 
@@ -117,6 +124,7 @@ Returns all available mode names.
 Returns the interval pattern for a specified mode.
 
 **Parameters:**
+
 - `mode`: The name of the mode
 - `withOctave`: Include an octave (default: `false`)
 

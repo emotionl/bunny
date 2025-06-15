@@ -1,8 +1,8 @@
-import typescript from 'rollup-plugin-typescript2'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
 import del from 'rollup-plugin-delete'
+import typescript from 'rollup-plugin-typescript2'
 
 const plugins = [del({ targets: 'dist/*' }), typescript(), nodeResolve(), commonjs(), terser()]
 
@@ -13,20 +13,20 @@ export default [
       {
         file: 'dist/index.js',
         format: 'esm',
-        sourcemap: true
+        sourcemap: true,
       },
       {
         file: 'dist/index.cjs',
         format: 'cjs',
-        sourcemap: true
+        sourcemap: true,
       },
       {
         file: 'dist/index.umd.js',
         format: 'umd',
         name: 'Bunny',
-        sourcemap: true
-      }
+        sourcemap: true,
+      },
     ],
-    plugins
-  }
+    plugins,
+  },
 ]

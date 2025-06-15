@@ -1,7 +1,0 @@
-{
-  "trailingComma": "none",
-  "singleQuote": true,
-  "semi": false,
-  "arrowParens": "avoid",
-  "printWidth": 100
-}

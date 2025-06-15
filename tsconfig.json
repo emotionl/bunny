@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "lib": ["es6", "dom"],
     "module": "esnext",
+    "moduleResolution": "node",
+    "types": ["node"],
+    "strict": true,
     "declaration": true,
     "outDir": "dist",
-    "esModuleInterop": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "lib": ["es6", "dom"],
-    "types": ["node"]
+    "esModuleInterop": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
