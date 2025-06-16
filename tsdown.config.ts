@@ -9,6 +9,7 @@ export default defineConfig({
   sourcemap: true,
   minify: true,
   platform: 'neutral',
+  exclude: ['**/*.test.ts'],
   outputOptions(options, format) {
     if (format === 'iife') {
       options.name = 'Bunny'
