@@ -1,5 +1,5 @@
 import type { Interval, Mode, ModeList } from '../types'
-import { INTERVAL_SEMITONE_MAP, MODE_INTERVAL_MAP, OCTAVE_INTERVAL, OCTAVE_SEMITONE } from '../constants'
+import { INTERVAL_SEMITONE_MAP, MODE_INTERVAL_MAP, OCTAVE_INTERVAL, OCTAVE_SEMITONES } from '../constants'
 
 export function getModeInterval(mode: Mode, withOctave: boolean = false): Array<Interval> {
   let modeInterval = MODE_INTERVAL_MAP[mode]
@@ -11,7 +11,7 @@ export function getModeInterval(mode: Mode, withOctave: boolean = false): Array<
 export function getModeSemitone(mode: Mode, withOctave: boolean = false): number[] {
   let modeSemitone = MODE_INTERVAL_MAP[mode].map(item => INTERVAL_SEMITONE_MAP[item])
   if (withOctave)
-    modeSemitone = modeSemitone.concat(OCTAVE_SEMITONE)
+    modeSemitone = modeSemitone.concat(OCTAVE_SEMITONES)
   return modeSemitone
 }
 
