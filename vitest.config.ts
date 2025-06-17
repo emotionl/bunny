@@ -26,7 +26,7 @@ export default defineConfig({
     },
 
     // 监听模式配置
-    watchExclude: ['**/node_modules/**', '**/dist/**', '**/.git/**'],
+    exclude: ['**/node_modules/**', '**/dist/**', '**/.git/**'],
 
     // 并发配置
     pool: 'threads',
