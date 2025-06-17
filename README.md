@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
-[English](./README.md) | [中文](./README.zh-CN.md)
+[English](https://github.com/emotionl/bunny/blob/main/README.md) | [中文](https://github.com/emotionl/bunny/blob/main/README.zh-CN.md)
 
 A lightweight JavaScript library for music theory calculations. Bunny provides intuitive methods and constants for scales, intervals, modes, and other music theory concepts.
 
@@ -60,7 +60,7 @@ Returns the scale notes for a specified mode.
 **Parameters:**
 
 - `key`: The tonic note of the scale
-- `mode`: The mode name (see [Supported Modes](#supported-modes))
+- `mode`: The mode name (see [Supported Modes](#-supported-modes))
 - `isSharp`: Use sharps (♯) or flats (♭) notation (default: `true`)
 - `withOctave`: Include an octave note at the end (default: `false`)
 
@@ -151,7 +151,7 @@ Generates a sequence of notes following a specified interval pattern.
 **Parameters:**
 
 - `startNote`: The starting note
-- `interval`: The interval to step by (see [Supported Intervals](#supported-intervals))
+- `interval`: The interval to step by (see [Supported Intervals](#-supported-intervals))
 - `amount`: Number of notes to generate
 - `isSharp`: Use sharps (♯) or flats (♭) notation (default: `true`)
 
