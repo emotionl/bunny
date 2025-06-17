@@ -1,7 +1,7 @@
 {
   "name": "@emotionl/bunny",
   "type": "module",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "bunny is a music tool to help you easily get the basic details in music.",
   "author": "emotionl (https://github.com/emotionl/)",
   "license": "MIT",
