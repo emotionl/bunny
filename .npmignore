@@ -1,5 +1,7 @@
 src/
 .github/
-.prettierrc
 tsconfig.json
-rollup.config.js
+eslint.config.js
+tsdown.config.ts
+vitest.config.ts
+README.zh-CN.md
