@@ -81,18 +81,27 @@ export const NOTE_LIST: MultiNoteList = [
  */
 export const INTERVAL_SEMITONE_MAP: Record<Interval, Semitone> = {
   P1: 0, // 纯一度
+
   m2: 1, // 小二度
   M2: 2, // 大二度
+
   m3: 3, // 小三度
   M3: 4, // 大三度
+
+  d4: 4, // 减四度
   P4: 5, // 纯四度
+  A4: 6, // 增四度
+
   d5: 6, // 减五度
-  A4: 6, // 增四度（三全音）
   P5: 7, // 纯五度
+  A5: 8, // 增五度
+
   m6: 8, // 小六度
   M6: 9, // 大六度
+
   m7: 10, // 小七度
   M7: 11, // 大七度
+
   P8: 12, // 纯八度
 }
 
@@ -106,27 +115,31 @@ export const INTERVAL_SEMITONE_MAP: Record<Interval, Semitone> = {
  */
 export const MODE_INTERVAL_MAP: ModeIntervalMap = {
   // 教会调式 (Church Modes)
-  'Ionian': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7'], // 大调
-  'Dorian': ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'm7'], // 多利亚调式
-  'Phrygian': ['P1', 'm2', 'm3', 'P4', 'P5', 'm6', 'm7'], // 弗里吉亚调式
-  'Lydian': ['P1', 'M2', 'M3', 'A4', 'P5', 'M6', 'M7'], // 利第亚调式
-  'Mixolydian': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7'], // 混合利第亚调式
-  'Aeolian': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'm7'], // 自然小调
-  'Locrian': ['P1', 'm2', 'm3', 'P4', 'd5', 'm6', 'm7'], // 洛克里亚调式
+  'Ionian': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'M7'],
+  'Dorian': ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'm7'],
+  'Phrygian': ['P1', 'm2', 'm3', 'P4', 'P5', 'm6', 'm7'],
+  'Lydian': ['P1', 'M2', 'M3', 'A4', 'P5', 'M6', 'M7'],
+  'Mixolydian': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7'],
+  'Aeolian': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'm7'],
+  'Locrian': ['P1', 'm2', 'm3', 'P4', 'd5', 'm6', 'm7'],
 
   // 五声音阶 (Pentatonic Scales)
-  'Major Pentatonic': ['P1', 'M2', 'M3', 'P5', 'M6'], // 大调五声音阶
-  'Minor Pentatonic': ['P1', 'm3', 'P4', 'P5', 'm7'], // 小调五声音阶
-  'Mixolydian Pentatonic': ['P1', 'M3', 'P4', 'P5', 'm7'], // 混合利第亚五声音阶
+  'Major Pentatonic': ['P1', 'M2', 'M3', 'P5', 'M6'],
+  'Minor Pentatonic': ['P1', 'm3', 'P4', 'P5', 'm7'],
+  'Mixolydian Pentatonic': ['P1', 'M3', 'P4', 'P5', 'm7'],
 
   // 爵士与蓝调音阶 (Jazz & Blues Scales)
-  'Blues Scale': ['P1', 'm3', 'P4', 'd5', 'P5', 'm7'], // 蓝调音阶
-  'Bebop Major': ['P1', 'M2', 'M3', 'P4', 'P5', 'm6', 'M6', 'M7'], // 咆勃大调
-  'Bebop Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M6', 'M7'], // 咆勃小调
-  'Bebop Dominent': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7', 'M7'], // 咆勃属调
-  'Bebop Dorian': ['P1', 'M2', 'm3', 'M3', 'P4', 'P5', 'M6', 'm7'], // 咆勃多利亚
+  'Blues Scale': ['P1', 'm3', 'P4', 'd5', 'P5', 'm7'],
+  'Bebop Major': ['P1', 'M2', 'M3', 'P4', 'P5', 'm6', 'M6', 'M7'],
+  'Bebop Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M6', 'M7'],
+  'Bebop Dominant': ['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7', 'M7'],
+  'Bebop Dorian': ['P1', 'M2', 'm3', 'M3', 'P4', 'P5', 'M6', 'm7'],
 
-  // 现代音阶 (Modern Scales)
-  'Harmonic Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M7'], // 和声小调
-  'Melodic Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'M7'], // 旋律小调
+  // Harmonic Minor Mode
+  'Harmonic Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M7'],
+
+  // Melodic Minor Mode
+  'Melodic Minor': ['P1', 'M2', 'm3', 'P4', 'P5', 'M6', 'M7'],
+  'Lydian Dominant': ['P1', 'M2', 'M3', 'A4', 'P5', 'M6', 'm7'],
+  'Altered': ['P1', 'm2', 'm3', 'd4', 'd5', 'm6', 'm7'],
 }

@@ -83,7 +83,7 @@ describe('scales', () => {
       })
 
       it('should generate correct Bebop Dominant scale', () => {
-        expect(getScale('C', 'Bebop Dominent', true, false)).toEqual(['C', 'D', 'E', 'F', 'G', 'A', 'A♯', 'B'])
+        expect(getScale('C', 'Bebop Dominant', true, false)).toEqual(['C', 'D', 'E', 'F', 'G', 'A', 'A♯', 'B'])
       })
 
       it('should generate correct Bebop Dorian scale', () => {
@@ -153,6 +153,14 @@ describe('scales', () => {
           expect(scale).toHaveLength(7)
           expect(scale[0]).toBe('C')
         })
+      })
+    })
+
+    describe('melodic minor mode', () => {
+      it('should generate correct Melodic Minor scale', () => {
+        expect(getScale('A', 'Melodic Minor', false, false)).toEqual(['A', 'B', 'C', 'D', 'E', 'G♭', 'A♭'])
+        expect(getScale('A♭', 'Altered', false, false)).toEqual(['A♭', 'A', 'B', 'C', 'D', 'E', 'G♭'])
+        expect(getScale('D', 'Lydian Dominant', false, false)).toEqual(['D', 'E', 'G♭', 'A♭', 'A', 'B', 'C'])
       })
     })
   })

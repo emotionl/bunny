@@ -29,7 +29,7 @@ describe('modes', () => {
     it('should return correct intervals for bebop scales', () => {
       expect(getModeInterval('Bebop Major', false)).toEqual(['P1', 'M2', 'M3', 'P4', 'P5', 'm6', 'M6', 'M7'])
       expect(getModeInterval('Bebop Minor', false)).toEqual(['P1', 'M2', 'm3', 'P4', 'P5', 'm6', 'M6', 'M7'])
-      expect(getModeInterval('Bebop Dominent', false)).toEqual(['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7', 'M7'])
+      expect(getModeInterval('Bebop Dominant', false)).toEqual(['P1', 'M2', 'M3', 'P4', 'P5', 'M6', 'm7', 'M7'])
       expect(getModeInterval('Bebop Dorian', false)).toEqual(['P1', 'M2', 'm3', 'M3', 'P4', 'P5', 'M6', 'm7'])
     })
 
@@ -80,7 +80,7 @@ describe('modes', () => {
     it('should return correct semitones for bebop scales', () => {
       expect(getModeSemitone('Bebop Major', false)).toEqual([0, 2, 4, 5, 7, 8, 9, 11])
       expect(getModeSemitone('Bebop Minor', false)).toEqual([0, 2, 3, 5, 7, 8, 9, 11])
-      expect(getModeSemitone('Bebop Dominent', false)).toEqual([0, 2, 4, 5, 7, 9, 10, 11])
+      expect(getModeSemitone('Bebop Dominant', false)).toEqual([0, 2, 4, 5, 7, 9, 10, 11])
       expect(getModeSemitone('Bebop Dorian', false)).toEqual([0, 2, 3, 4, 5, 7, 9, 10])
     })
 
@@ -125,25 +125,7 @@ describe('modes', () => {
   describe('getModeList', () => {
     it('should return all available modes', () => {
       const modes = getModeList()
-
-      expect(modes).toHaveLength(17)
-      expect(modes).toContain('Ionian')
-      expect(modes).toContain('Dorian')
-      expect(modes).toContain('Phrygian')
-      expect(modes).toContain('Lydian')
-      expect(modes).toContain('Mixolydian')
-      expect(modes).toContain('Aeolian')
-      expect(modes).toContain('Locrian')
-      expect(modes).toContain('Major Pentatonic')
-      expect(modes).toContain('Minor Pentatonic')
-      expect(modes).toContain('Mixolydian Pentatonic')
-      expect(modes).toContain('Blues Scale')
-      expect(modes).toContain('Harmonic Minor')
-      expect(modes).toContain('Melodic Minor')
-      expect(modes).toContain('Bebop Major')
-      expect(modes).toContain('Bebop Minor')
-      expect(modes).toContain('Bebop Dominent')
-      expect(modes).toContain('Bebop Dorian')
+      expect(modes).toHaveLength(19)
     })
 
     it('should return consistent results on multiple calls', () => {
@@ -173,7 +155,7 @@ describe('modes', () => {
 
     it('should contain all bebop scales', () => {
       const modes = getModeList()
-      const bebopModes = ['Bebop Major', 'Bebop Minor', 'Bebop Dominent', 'Bebop Dorian']
+      const bebopModes = ['Bebop Major', 'Bebop Minor', 'Bebop Dominant', 'Bebop Dorian']
 
       bebopModes.forEach((mode) => {
         expect(modes).toContain(mode)

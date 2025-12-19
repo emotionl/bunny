@@ -26,15 +26,18 @@ export type Interval
     | 'M2'
     | 'm3'
     | 'M3'
+    | 'd4'
     | 'P4'
-    | 'd5'
     | 'A4'
+    | 'd5'
     | 'P5'
+    | 'A5'
     | 'm6'
     | 'M6'
     | 'm7'
     | 'M7'
     | 'P8'
+
 export type Semitone = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 export type Mode
   = | 'Ionian'
@@ -48,12 +51,14 @@ export type Mode
     | 'Minor Pentatonic'
     | 'Mixolydian Pentatonic'
     | 'Blues Scale'
-    | 'Harmonic Minor'
-    | 'Melodic Minor'
     | 'Bebop Major'
     | 'Bebop Minor'
-    | 'Bebop Dominent'
+    | 'Bebop Dominant'
     | 'Bebop Dorian'
+    | 'Harmonic Minor'
+    | 'Melodic Minor'
+    | 'Lydian Dominant'
+    | 'Altered'
 
 export type ModeList = Array<Mode>
 export type ModeIntervalMap = Record<Mode, Array<Interval>>
