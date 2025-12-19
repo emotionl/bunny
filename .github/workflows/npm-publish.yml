@@ -1,27 +1,36 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
 name: Node.js Package
 
 on:
   push:
     branches:
       - main
+  # 允许在 Actions 页面手动触发
+  workflow_dispatch:
 
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 22
-          registry-url: https://registry.npmjs.org/
+      - uses: actions/checkout@v4
+      
       - uses: pnpm/action-setup@v4
         with:
           version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: 'https://registry.npmjs.org/'
+          cache: 'pnpm'
+
       - run: pnpm install
+      
+      # 发布前先运行测试，保证质量
+      - run: pnpm test
+      
       - run: pnpm run build
-      - run: pnpm publish --access=public
+      
+      # --no-git-checks 避免因 CI 环境 git 状态导致的发布失败
+      - run: pnpm publish --access=public --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
