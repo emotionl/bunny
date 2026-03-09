@@ -18,12 +18,12 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.14.1",
-    "@types/node": "^20.1.2",
-    "eslint": "^9.28.0",
-    "eslint-plugin-format": "^1.0.1",
-    "tsdown": "^0.12.7",
-    "typescript": "^5.0.4",
-    "vitest": "^3.2.3"
+    "@antfu/eslint-config": "^4.19.0",
+    "@types/node": "^20.19.37",
+    "eslint": "^9.39.3",
+    "eslint-plugin-format": "^1.5.0",
+    "tsdown": "^0.12.9",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
   }
 }
