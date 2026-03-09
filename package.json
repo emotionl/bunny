@@ -22,7 +22,7 @@
     "@types/node": "^20.19.37",
     "eslint": "^9.39.3",
     "eslint-plugin-format": "^1.5.0",
-    "tsdown": "^0.12.9",
+    "tsdown": "^0.21.0",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }
